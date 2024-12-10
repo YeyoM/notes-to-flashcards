@@ -1,0 +1,48 @@
+version: "3"
+services:
+  ollama:
+    container_name: ollama
+    restart: unless-stopped
+    image: ollama/ollama:latest
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+      - ./models:/root/.ollama/models
+    command: >
+      sh -c "
+      if [ -f /root/.ollama/models/mistral.* ]; then
+        echo 'Mistral model found locally, skipping download';
+      else
+        ollama pull mistral:latest;
+      fi &&
+      ollama serve
+      "
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:11434/api/version"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    networks:
+      - ollama_net
+
+  flashcard_generator:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./study_guides:/app/study_guides
+      - ./output:/app/output
+    depends_on:
+      ollama:
+        condition: service_healthy # Wait for Ollama to be fully ready
+    networks:
+      - ollama_net
+
+volumes:
+  ollama_data:
+
+networks:
+  ollama_net:
+    driver: bridge
