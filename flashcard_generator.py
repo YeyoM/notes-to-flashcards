@@ -1,6 +1,7 @@
 import os
-import requests
-import pandas as pd
+import time
+import requests  # pyright: ignore
+import pandas as pd  # pyright: ignore
 from typing import List, Dict
 
 
@@ -25,8 +26,9 @@ class FlashcardGenerator:
         try:
             # Test connection
             test_response = requests.get(
-                f"{self.ollama_url.replace('/generate', '')}/api/version"
+                f"{self.ollama_url.replace('/generate', '')}/version"
             )
+            print(test_response.text)
             test_response.raise_for_status()
 
             # Generate test flashcard
@@ -60,13 +62,13 @@ class FlashcardGenerator:
                 return file.read().split("\n\n")  # Split by paragraphs
 
         elif file_extension == ".docx":
-            import docx
+            import docx  # pyright: ignore
 
             doc = docx.Document(file_path)
             return [para.text for para in doc.paragraphs if para.text.strip()]
 
         elif file_extension == ".pdf":
-            import PyPDF2
+            import PyPDF2  # pyright: ignore
 
             with open(file_path, "rb") as file:
                 reader = PyPDF2.PdfReader(file)
@@ -144,13 +146,15 @@ class FlashcardGenerator:
 
 
 def main():
+    # wait 30 seconds for ollama to start
+    time.sleep(30)
+
     # Create generator instance
     generator = FlashcardGenerator()
 
     # Test Ollama connection first
     if not generator.test_ollama_connection():
         print("Cannot proceed. Ollama connection test failed.")
-        return
 
     # Example usage - comment out if not ready to generate actual flashcards
     # generator.generate_flashcards('study_guides/your_study_guide.txt')
