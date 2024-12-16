@@ -13,7 +13,7 @@ class FlashcardGenerator:
         :param ollama_url: URL of the Ollama API for generating flashcards
         """
         self.ollama_url = ollama_url
-        self.model = "mistral"  # Default model, can be changed
+        self.model = "tinyllama"  # Default model, can be changed
 
     def test_ollama_connection(self) -> bool:
         """
@@ -21,30 +21,58 @@ class FlashcardGenerator:
 
         :return: Boolean indicating successful connection and flashcard generation
         """
-        test_content = "Explain the basic principles of machine learning"
-
         try:
             # Test connection
             test_response = requests.get(
                 f"{self.ollama_url.replace('/generate', '')}/version"
             )
-            print(test_response.text)
+            # print(test_response.text)
             test_response.raise_for_status()
-
-            # Generate test flashcard
-            test_flashcard = self.generate_flashcard(test_content)
 
             print("Ollama Connection Test:")
             print("✅ API Version Check: Success")
-            print("✅ Flashcard Generation: Success")
-            print("\nTest Flashcard:")
-            print(f"Question: {test_flashcard['Question']}")
-            print(f"Answer: {test_flashcard['Answer']}")
 
             return True
 
         except requests.exceptions.RequestException as e:
             print(f"❌ Ollama Connection Failed: {e}")
+            return False
+
+    def pull_model(self):
+        """
+        Pull a model from the Ollama API
+        """
+        try:
+            print(f"Pulling model: {self.model}")
+            response = requests.post(
+                f"{self.ollama_url.replace('/generate', '')}/pull",
+                json={"model": self.model, "stream": False},
+            )
+            # print(response.json())
+            response.raise_for_status()
+            print(f"Model {self.model} pulled successfully")
+        except Exception as e:
+            print(f"Error pulling model: {e}")
+
+    def check_model(self) -> bool:
+        """
+        check if the model is already pulled from the Ollama API
+        """
+        try:
+            print(f"Checking model: {self.model}")
+            response = requests.get(
+                f"{self.ollama_url.replace('/generate', '')}/tags",
+            )
+            # print(response.json())
+            response.raise_for_status()
+            for model in response.json().get("models", []):
+                if self.model in model["name"]:
+                    print(f"Model {self.model} already pulled")
+                    return True
+            print(f"Model {self.model} not pulled")
+            return False
+        except Exception as e:
+            print(f"Error checking model: {e}")
             return False
 
     def parse_study_guide(self, file_path: str) -> List[str]:
@@ -104,6 +132,7 @@ class FlashcardGenerator:
                 self.ollama_url,
                 json={"model": self.model, "prompt": prompt, "stream": False},
             )
+            print(response.json())
             response.raise_for_status()
 
             generated_text = response.json()["response"]
@@ -147,7 +176,7 @@ class FlashcardGenerator:
 
 def main():
     # wait 30 seconds for ollama to start
-    time.sleep(30)
+    time.sleep(10)
 
     # Create generator instance
     generator = FlashcardGenerator()
@@ -156,8 +185,10 @@ def main():
     if not generator.test_ollama_connection():
         print("Cannot proceed. Ollama connection test failed.")
 
-    # Example usage - comment out if not ready to generate actual flashcards
-    # generator.generate_flashcards('study_guides/your_study_guide.txt')
+    # Check if the model is already pulled
+    if not generator.check_model():
+        # Pull the model
+        generator.pull_model()
 
 
 if __name__ == "__main__":
