@@ -15,6 +15,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./study_guides:/app/study_guides
+      - ./flashcards:/app/flashcards
       - ./output:/app/output
     depends_on:
       - ollama

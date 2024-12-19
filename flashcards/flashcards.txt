@@ -1,0 +1,23 @@
+ Q1: What is the definition of programming?
+  A1: The process of writing instructions for a computer to perform specific tasks.
+
+  Q2: What is an algorithm?
+  A2: An step-by-step procedure for solving a problem.
+
+  Q3: What is a programming language?
+  A3: A formal language used to communicate instructions to a machine.
+
+  Q4: What is syntax in the context of programming?
+  A4: The rules defining the structure of a programming language.
+
+  Q5: What does debugging refer to in programming?
+  A5: The process of finding and fixing errors in code.
+
+  Q6: What is a variable in programming?
+  A6: A named storage location for data.
+
+  Q7: What are some common data types in programming?
+  A7: `int`, `float`, `string` are examples of common data types in programming.
+
+  Q8: Provide an example of variable and its assignment in Python.
+  A8: `name = "Alice"` and `age = 25` are examples of variable and their assignments in Python.
