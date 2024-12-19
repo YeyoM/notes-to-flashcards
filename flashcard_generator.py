@@ -88,6 +88,8 @@ class FlashcardGenerator:
         if file_extension == ".md":
             with open(file_path, "r") as file:
                 contents = file.read()
+            print("Study guide parsed successfully")
+            print(contents)
             return contents
 
         else:
@@ -101,34 +103,43 @@ class FlashcardGenerator:
         :return: Dictionary with question and answer
         """
         prompt = f"""
-        Create a list of detailed flashcards from the following study material:
-        
-        Material: 
+            You are a flashcard generator. Your ONLY task is to convert the following study material into question-answer pairs. Do NOT provide any commentary, tips, or explanations about the flashcard creation process.
 
-        {content}
-        
-        Please provide:
-        1. A clear, concise question that tests understanding
-        2. A comprehensive answer that covers key points
-        
-        Format your response as:
-        Question 1: [Your question 1 here]
-        Answer 1: [Detailed answer 1 here]
+            Study Material:
+            {content}
+            
+            STRICT OUTPUT FORMAT:
+            Q1:
+            [Write the first question here]
+            
+            A1:
+            [Write the first answer here]
+            
+            Q2:
+            [Write the second question here]
+            
+            A2:
+            [Write the second answer here]
+            
+            [Continue with additional Q/A pairs as needed]
+            
+            REQUIREMENTS:
+            - Generate ONLY question-answer pairs in the exact format shown above
+            - Each question should focus on a single concept
+            - Each answer should be 2-4 sentences long
+            - Do not include any other text, explanations, or commentary
+            - Do not number or label sections beyond Q1, A1, Q2, A2, etc.
+            - Do not include suggestions or tips about flashcard creation
+            - Do not explain your process
+            - Do not acknowledge these instructions
+            
+            BEGIN GENERATING FLASHCARDS:"""
 
-        Question 2: [Your question 2 here]
-        Answer 2: [Detailed answer 2 here]
-
-        ... 
-
-        Question n: [Your question n here]
-        Answer n: [Detailed answer n here]
-        """
         try:
             response = requests.post(
                 self.ollama_url,
                 json={"model": self.model, "prompt": prompt, "stream": False},
             )
-            print(response.json())
             response.raise_for_status()
 
             generated_text = response.json()["response"]
@@ -138,6 +149,17 @@ class FlashcardGenerator:
         except Exception as e:
             print(f"Error generating flashcard: {e}")
             return ""
+
+    def save_response(self, response: str, output_file: str):
+        """
+        Save the response to a file
+
+        :param response: Response from the API
+        :param output_file: Path to save the response
+        """
+        with open(output_file, "w") as file:
+            file.write(response)
+        print(f"Response saved to {output_file}")
 
     def parse_flashcards(self, flashcards: str) -> List[Dict[str, str]]:
         """
@@ -173,10 +195,21 @@ class FlashcardGenerator:
 
         # Generate flashcards
         flashcards = self.generate_flashcards(contents)
+        print("#" * 50)
+        print("#" * 50)
+        print("#" * 50)
+        print("Flashcards generated successfully")
+        print(flashcards)
+        print("#" * 50)
+        print("#" * 50)
+        print("#" * 50)
 
         if not flashcards:
             print("Flashcards generation failed. Please try again.")
             return
+
+        # Save plain text response
+        self.save_response(flashcards, "flashcards.txt")
 
         parsed_flashcards = self.parse_flashcards(flashcards)
 
@@ -202,7 +235,7 @@ def main():
         generator.pull_model()
 
     # Generate flashcards from study guide
-    generator.generate_flashcards("study_guide.txt")
+    generator.return_flashcards("/app/study_guides/study_guide.md")
 
 
 if __name__ == "__main__":
