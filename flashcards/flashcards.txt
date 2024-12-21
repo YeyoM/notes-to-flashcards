@@ -1,29 +1,91 @@
-1. **Pregunta:** ¿Qué es un firewall?
-   *Respuesta:* Un dispositivo de seguridad de red que supervisa y controla el tráfico de red entrante y saliente para evitar accesos no autorizados.
+ Q1: ¿Qué es una red en telecomunicaciones?
+          A1: Una red es un conjunto de dispositivos interconectados que permiten la comunicación entre sí.
 
-2. **Pregunta:** ¿Cómo funciona un firewall?
-   *Respuesta:* Inspectan paquetes entrantes y salientes, y deciden si los permiten o los bloquean en base de una serie de reglas.
+          Q2: ¿Cuál es la función de un router en una red?
+          A2: El router se encarga de dirigir el tráfico de datos entre diferentes redes o segmentos de red.
 
-3. **Pregunta:** ¿Qué tipos de firewalls existen según lo que protegen?
-   *Respuesta:* Basados en red y basados en host. Los basados en red protegen redes enteras, suelen ser de hardware, mientras que los basados en host protegen dispositivos individuales.
+          Q3: ¿Qué son las capas del modelo OSI y cuál es su número?
+          A3: Las capas del modelo OSI son siete y van desde la física hasta la aplicación, siendo cada una responsable de una parte específica de la comunicación.
 
-4. **Pregunta:** ¿Qué tipos de firewalls existen según el método de filtrado?
-   *Respuesta:* Filtrado de paquetes, inspección de estado, puerta de enlace, proxy, de próxima generación, virtuales y nativos de la nube.
+          Q4: ¿Cuál es el protocolo de transmisión de datos en la capa de red del modelo OSI?
+          A4: El protocolo de transmisión de datos en la capa de red es IP (Internet Protocol).
 
-5. **Pregunta:** ¿Qué es un puente?
-   *Respuesta:* Conecta y filtra el tráfico entre dos o más segmentos de red, y opera en la capa dos del modelo OSI.
+          Q5: ¿Qué son los nodos en una red y cuál es su función?
+          A5: Los nodos son dispositivos o puntos de interconexión en una red. Sus funciones pueden variar dependiendo del tipo de nodo, pero generalmente se encargan de la recepción, procesamiento y envío de datos.
 
-6. **Pregunta:** ¿Qué es un switch?
-   *Respuesta:* Es un dispositivo que permite conectar varias computadoras entre sí, este es un dispositivo de capa 2, por lo que usa las direcciones MAC.
+          Q6: ¿Qué es un firewall y cuál es su función?
+          A6: Un firewall es un dispositivo que controla el tráfico de red entrante y saliente. Su función es proteger una red o un sistema contra ataques y ciberamenazas.
 
-7. **Pregunta:** ¿Cómo se conectan los equipos en una red?
-   *Respuesta:* A través de un cableado estructurado.
+          Q7: ¿Qué son los paquetes en una red?
+          A7: Los paquetes son pequeños bloques de datos que contienen información que se envían por redes.
 
-8. **Pregunta:** ¿Qué es un modem?
-   *Respuesta:* Es un dispositivo de entrada y salida, el cual conecta distintos equipos computacionales entre sí.
+          Q8: ¿Cuál es el propósito del protocolo TCP y cuál es su número?
+          A8: El propósito del protocolo TCP es garantizar la integridad, confiabilidad y orden de los datos que se envían por redes. Su número es 6 (capa transporte).
+1. ¿Qué es el enrutamiento en redes de computación?
+   Respuesta: Es el proceso de selección de rutas en cualquier red, mediante la determinación de la mejor ruta para comunicar entre dos nodos.
 
-9. **Pregunta:** ¿Cómo se comunican las aplicaciones con otros elementos?
-   *Respuesta:* A través de puertos.
+2. ¿Cuáles son los elementos de una red de computación?
+   Respuesta: Los hosts, nodos de comunicación y las rutas de conexión entre los nodos.
 
-10. **Pregunta:** ¿Qué es un puesto lógico?
-   *Respuesta:* Es un puesto que se crea en software para poder conectar a una computadora o dispositivo con otros elementos en una red.
+3. ¿Qué es un enrutador?
+   Respuesta: Es un dispositivo de red que conecta los dispositivos de computación y las redes a otras redes, cumpliendo con 3 funciones principales: determinación de la ruta, reenvío de datos y balanceador de carga.
+
+4. ¿Cómo funciona un enrutador?
+   Respuesta: Los datos se mueven en la red en forma de paquetes, los cuales son enviados por el enrutador desde un origen hasta un destino. El enrutador usa una tabla de de enrutamiento, la cual le indica el camino óptimo para llegar de punto A a punto B.
+
+5. ¿Qué tipos de enrutamiento existen?
+   Respuesta: Existen dos tipos de enrutamiento: Enrutamiento Estático y Enrutamiento Dinámico. El primero se basa en un administrador de red, quién configura manualmente las rutas de red, mientras que el segundo es un conjunto de reglas que crean, mantienen y actualizan la tabla de enrutamiento dinámico.
+
+6. ¿Qué son los protocolos de enrutamiento?
+   Respuesta: Son un conjunto de reglas que especifican cómo los enrutadores identifican paquetes y reenvían paquetes. Los protocolos pueden ser clasificados en Protocolos de puerta de enlace interior y Protocolos de puerta de enlace exterior.
+
+7. ¿Cuáles son algunos ejemplos de protocolos de puerta de enlace interior?
+   Respuesta: Algunos ejemplos de protocolos de puerta de enlace interior son RIP y OSPF.
+
+8. ¿Qué es BGP (Border Gateway Protocol)?
+   Respuesta: Es el único protocolo de puerta de enlace exterior, sirve para gestionar de mejor manera la transferencia de información entre dos sistemas autónomos.
+
+9. ¿Cuáles son algunos ejemplos de algoritmos de enrutamiento?
+   Respuesta: Algunos ejemplos de algoritmos de enrutamiento son el Enrutamiento vector distancia y el Enrutamiento por estado de enlace.
+
+10. ¿Qué es el enrutamiento en la nube?
+   Respuesta: Es un entorno virtual, en el que un enrutador en la nube, es un software que virtualiza las funciones de un enrutador, facilitando sus funciones.
+1. **¿Qué es un firewall?**
+   *Un dispositivo de seguridad de red que supervisa y controla el tráfico de red entrante y saliente para evitar accesos no autorizados.*
+
+2. **¿En qué se puede clasificar un firewall?**
+   *Según lo que protegen, basados en red o host*
+   *Por método de filtrado, filtrado de paquetes, inspección de estado, puerta de enlace, proxy, de próxima generación, virtuales o nativos de la nube*
+
+3. **¿Cómo funciona un firewall basado en red?**
+   *Protégen redes enteras, suelen ser de hardware.*
+
+4. **¿Cómo funciona un firewall basado en host?**
+   *Protegen dispositivos individuales*
+
+5. **¿Qué es el cableado vertical y horizontal?**
+   *El cableado vertical o troncal conecta los diferentes cuartos de servicio, mientras que el cableado horizontal conecta las estaciones de trabajo con la red.*
+
+6. **¿Por qué es importante seguir estándares al instalar un cableado estructurado?**
+   *Para asegurar la compatibilidad y el rendimiento óptimo*
+
+7. **¿Qué es una tarjeta de red?**
+   *Son aparatos que se encargan de preparar, transferir y controlar la información o datos que envían a los otros equipos que están conectados a una misma red.*
+
+8. **¿Qué es un repetidor?**
+   *Es un dispositivo que refuerza las señales, amplificándolas o regenerándolas*
+
+9. **¿Qué son los transductores?**
+   *Son dispositivos que convierten las señales de un tipo a otro, permitiendo la comunicación y transmisión de datos de manera eficiente.*
+
+10. **¿Qué es un puertos?**
+    *Son las interfaces que utilizan las aplicaciones para conectarse con otros elementos, hay puertos de hardware y software.*
+
+11. **¿Qué son los bridges y switch?**
+   *Los bridges conectan y filtran el tráfico entre dos o más segmentos de red y opera en la capa dos del modelo OSI, mientras que un switch permite conectar varias computadoras entre sí y es un dispositivo de capa 2.*
+
+12. **¿Qué es MPEG y MKV?**
+   *Son formatos de video compreso para compartir y almacenar videos digitales*
+
+13. **¿Qué es ProRes?**
+   *Es un formato de video compreso profesional desarrollado por Apple Inc.*
