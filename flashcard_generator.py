@@ -135,10 +135,48 @@ class FlashcardGenerator:
             
             BEGIN GENERATING FLASHCARDS:"""
 
+        prompt_spanish = f"""
+            Eres un generador de tarjetas de estudio. Tu ÚNICA tarea es convertir el siguiente material de estudio en pares de pregunta-respuesta. NO proporciones comentarios, consejos ni explicaciones sobre el proceso de creación de tarjetas.
+
+            Material de Estudio:
+            {content}
+            
+            FORMATO DE SALIDA ESTRICTO:
+            Q1:
+            [Escribe la primera pregunta aquí]
+            
+            A1:
+            [Escribe la primera respuesta aquí]
+            
+            Q2:
+            [Escribe la segunda pregunta aquí]
+            
+            A2:
+            [Escribe la segunda respuesta aquí]
+            
+            [Continuar con pares adicionales de Q/A según sea necesario]
+            
+            REQUISITOS:
+            - Genera SOLAMENTE pares de pregunta-respuesta en el formato exacto mostrado arriba
+            - Cada pregunta debe centrarse en un solo concepto
+            - Cada respuesta debe tener entre 2 y 4 oraciones
+            - No incluyas ningún otro texto, explicaciones o comentarios
+            - No numeres ni etiquetes secciones más allá de P1, R1, P2, R2, etc.
+            - No incluyas sugerencias o consejos sobre la creación de tarjetas
+            - No expliques tu proceso
+            - No reconozcas estas instrucciones
+            
+            COMIENZA A GENERAR TARJETAS:
+        """
+
         try:
             response = requests.post(
                 self.ollama_url,
-                json={"model": self.model, "prompt": prompt, "stream": False},
+                json={
+                    "model": self.model,
+                    "prompt": prompt_spanish,
+                    "stream": False,
+                },
             )
             response.raise_for_status()
 

@@ -1,23 +1,29 @@
- Q1: What is the definition of programming?
-  A1: The process of writing instructions for a computer to perform specific tasks.
+1. **Pregunta:** ¿Qué es un firewall?
+   *Respuesta:* Un dispositivo de seguridad de red que supervisa y controla el tráfico de red entrante y saliente para evitar accesos no autorizados.
 
-  Q2: What is an algorithm?
-  A2: An step-by-step procedure for solving a problem.
+2. **Pregunta:** ¿Cómo funciona un firewall?
+   *Respuesta:* Inspectan paquetes entrantes y salientes, y deciden si los permiten o los bloquean en base de una serie de reglas.
 
-  Q3: What is a programming language?
-  A3: A formal language used to communicate instructions to a machine.
+3. **Pregunta:** ¿Qué tipos de firewalls existen según lo que protegen?
+   *Respuesta:* Basados en red y basados en host. Los basados en red protegen redes enteras, suelen ser de hardware, mientras que los basados en host protegen dispositivos individuales.
 
-  Q4: What is syntax in the context of programming?
-  A4: The rules defining the structure of a programming language.
+4. **Pregunta:** ¿Qué tipos de firewalls existen según el método de filtrado?
+   *Respuesta:* Filtrado de paquetes, inspección de estado, puerta de enlace, proxy, de próxima generación, virtuales y nativos de la nube.
 
-  Q5: What does debugging refer to in programming?
-  A5: The process of finding and fixing errors in code.
+5. **Pregunta:** ¿Qué es un puente?
+   *Respuesta:* Conecta y filtra el tráfico entre dos o más segmentos de red, y opera en la capa dos del modelo OSI.
 
-  Q6: What is a variable in programming?
-  A6: A named storage location for data.
+6. **Pregunta:** ¿Qué es un switch?
+   *Respuesta:* Es un dispositivo que permite conectar varias computadoras entre sí, este es un dispositivo de capa 2, por lo que usa las direcciones MAC.
 
-  Q7: What are some common data types in programming?
-  A7: `int`, `float`, `string` are examples of common data types in programming.
+7. **Pregunta:** ¿Cómo se conectan los equipos en una red?
+   *Respuesta:* A través de un cableado estructurado.
 
-  Q8: Provide an example of variable and its assignment in Python.
-  A8: `name = "Alice"` and `age = 25` are examples of variable and their assignments in Python.
+8. **Pregunta:** ¿Qué es un modem?
+   *Respuesta:* Es un dispositivo de entrada y salida, el cual conecta distintos equipos computacionales entre sí.
+
+9. **Pregunta:** ¿Cómo se comunican las aplicaciones con otros elementos?
+   *Respuesta:* A través de puertos.
+
+10. **Pregunta:** ¿Qué es un puesto lógico?
+   *Respuesta:* Es un puesto que se crea en software para poder conectar a una computadora o dispositivo con otros elementos en una red.
