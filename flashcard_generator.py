@@ -75,7 +75,7 @@ class FlashcardGenerator:
             print(f"Error checking model: {e}")
             return False
 
-    def parse_study_guide(self, file_path: str) -> str:
+    def get_study_guide(self, file_path: str) -> str:
         """
         Parse study guide from different file types
 
@@ -94,6 +94,85 @@ class FlashcardGenerator:
 
         else:
             return ""
+
+    def divide_section(self, contents: str, max_words: int = 1200) -> list:
+        """
+        Divides a markdown document into sections based on headers and word count limits.
+
+        Args:
+            contents (str): Markdown content to divide
+            max_words (int): Maximum number of words per section before splitting further
+
+        Returns:
+            list: List of sections as strings
+        """
+        if not contents:
+            return []
+
+        def get_header_level(line: str) -> int:
+            """Returns the header level (count of #) or 0 if not a header"""
+            if not line.strip().startswith("#"):
+                return 0
+            return len(line.split()[0].strip())
+
+        def count_words(text: str) -> int:
+            """Counts words in a text section"""
+            return len([word for word in text.split() if word.strip()])
+
+        def split_by_header_level(text: str, level: int) -> list:
+            """Splits content by headers of specified level"""
+            if not text.strip():
+                return []
+
+            lines = text.splitlines()
+            sections = []
+            current_section = []
+
+            for line in lines:
+                header_level = get_header_level(line)
+                if header_level == level and current_section:
+                    sections.append("\n".join(current_section))
+                    current_section = []
+                current_section.append(line)
+
+            if current_section:
+                sections.append("\n".join(current_section))
+
+            return sections
+
+        # Find the highest level header (lowest number of #)
+        lines = contents.splitlines()
+        header_levels = [
+            get_header_level(line) for line in lines if get_header_level(line) > 0
+        ]
+        if not header_levels:
+            return [contents]
+
+        highest_level = min(header_levels)
+
+        # First split by highest level headers
+        sections = split_by_header_level(contents, highest_level)
+
+        # Further split sections that exceed word count
+        final_sections = []
+        for section in sections:
+            if count_words(section) > max_words:
+                # Try splitting by next header level
+                next_level = highest_level + 1
+                while next_level <= 6:
+                    subsections = split_by_header_level(section, next_level)
+                    if (
+                        len(subsections) > 1
+                    ):  # Only use split if it actually divided the content
+                        final_sections.extend(subsections)
+                        break
+                    next_level += 1
+                else:  # If no further header splits possible, keep as is
+                    final_sections.append(section)
+            else:
+                final_sections.append(section)
+
+        return final_sections
 
     def generate_flashcards(self, content: str) -> str:
         """
@@ -232,27 +311,41 @@ class FlashcardGenerator:
         :param output_file: Path to save the Excel file
         """
         # Parse study guide
-        contents = self.parse_study_guide(file_path)
+        contents = self.get_study_guide(file_path)
 
         if not contents:
             print("Study guide parsing failed. Please check the file type.")
             return
 
-        # Generate flashcards
-        flashcards = self.generate_flashcards(contents)
+        # Divide study guide into sections
+        sections = self.divide_section(contents, max_words=1200)
         print("#" * 50)
-        print("Flashcards generated successfully.")
-        print(flashcards)
+        print("Sections divided successfully.")
+        for i, section in enumerate(sections):
+            print(f"Section {i+1}:")
+            print(section)
         print("#" * 50)
 
-        if not flashcards:
+        # Generate flashcards
+        all_flashcards = []
+        for section in sections:
+            flashcards = self.generate_flashcards(section)
+            all_flashcards.append(flashcards)
+
+        all_flashcards = "\n".join(all_flashcards)
+        print("#" * 50)
+        print("Flashcards generated successfully.")
+        print(all_flashcards)
+        print("#" * 50)
+
+        if len(all_flashcards) == 0:
             print("Flashcards generation failed. Please try again.")
             return
 
         # Save plain text response
-        self.save_response(flashcards, "/app/flashcards/flashcards.txt")
+        self.save_response(all_flashcards, "/app/flashcards/flashcards.txt")
 
-        parsed_flashcards = self.parse_flashcards(flashcards)
+        parsed_flashcards = self.parse_flashcards(all_flashcards)
 
         print("#" * 50)
         print("Parsed Flashcards:")
