@@ -350,7 +350,7 @@ class FlashcardGenerator:
 
         for i in range(0, len(flashcards_list)):
             line = flashcards_list[i].strip()
-            if line.startswith("Q"):
+            if line.startswith("P"):
                 question = flashcards_list[i].strip()
                 answer = flashcards_list[i + 1].strip()
                 print(f"Question: {question}")
@@ -378,7 +378,7 @@ class FlashcardGenerator:
             return
 
         # Divide study guide into sections
-        sections = self.divide_section(contents, max_words=1200)
+        sections = self.divide_section(contents, max_words=600)
         sections = self.join_small_sectios(sections, min_words=200)
         print("#" * 150)
         print("Sections divided successfully.")
