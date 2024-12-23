@@ -89,13 +89,30 @@ class FlashcardGenerator:
             with open(file_path, "r") as file:
                 contents = file.read()
             print("Study guide parsed successfully")
-            print(contents)
+            # print(contents)
             return contents
 
         else:
             return ""
 
-    def divide_section(self, contents: str, max_words: int = 1200) -> list:
+    def clean_study_guide(self, contents: str) -> str:
+        """
+        Clean the study guide by removing "==", "**", "_", "*", and other markdown elements
+        """
+        if not contents:
+            return ""
+
+        # Remove markdown elements
+        contents = contents.replace("==", "")
+        contents = contents.replace("__", "")
+        contents = contents.replace("**", "")
+        contents = contents.replace("_", "")
+        contents = contents.replace("*", "")
+        contents = contents.replace("`", "")
+
+        return contents
+
+    def divide_section(self, contents: str, max_words: int = 600) -> list:
         """
         Divides a markdown document into sections based on headers and word count limits.
 
@@ -174,6 +191,39 @@ class FlashcardGenerator:
 
         return final_sections
 
+    def join_small_sectios(self, sections: list, min_words: int = 200) -> list:
+        """
+        Joins small sections together to meet a minimum word count. If a section is too small, it will be joined with the next section.
+
+        Args:
+            sections (list): List of sections to join
+            max_words (int): Minimum number of words per section after joining
+
+        Returns:
+            list: List of sections as strings
+        """
+        if not sections:
+            return []
+
+        def count_words(text: str) -> int:
+            """Counts words in a text section"""
+            return len([word for word in text.split() if word.strip()])
+
+        final_sections = []
+        current_section = ""
+
+        for section in sections:
+            if count_words(current_section) < min_words:
+                current_section += "\n\n" + section
+            else:
+                final_sections.append(current_section)
+                current_section = section
+
+        if current_section:
+            final_sections.append(current_section)
+
+        return final_sections
+
     def generate_flashcards(self, content: str) -> str:
         """
         Generate a flashcard using Ollama API
@@ -181,6 +231,12 @@ class FlashcardGenerator:
         :param content: Content section to generate flashcard from
         :return: Dictionary with question and answer
         """
+        number_of_words = len(content.split())
+        if number_of_words < 50:
+            return ""
+
+        number_of_questions = number_of_words // 50
+
         prompt = f"""
             You are a flashcard generator. Your ONLY task is to convert the following study material into question-answer pairs. Do NOT provide any commentary, tips, or explanations about the flashcard creation process.
 
@@ -203,6 +259,7 @@ class FlashcardGenerator:
             [Continue with additional Q/A pairs as needed]
             
             REQUIREMENTS:
+            - Generate at least {number_of_questions} question-answer pairs
             - Generate ONLY question-answer pairs in the exact format shown above
             - Each question should focus on a single concept
             - Each answer should be 2-4 sentences long
@@ -217,25 +274,26 @@ class FlashcardGenerator:
         prompt_spanish = f"""
             Eres un generador de tarjetas de estudio. Tu ÚNICA tarea es convertir el siguiente material de estudio en pares de pregunta-respuesta. NO proporciones comentarios, consejos ni explicaciones sobre el proceso de creación de tarjetas.
 
-            Material de Estudio:
+            Material de Estudio en formato Markdown:
             {content}
             
             FORMATO DE SALIDA ESTRICTO:
-            Q1:
+            P1:
             [Escribe la primera pregunta aquí]
             
-            A1:
+            R1:
             [Escribe la primera respuesta aquí]
             
-            Q2:
+            P2:
             [Escribe la segunda pregunta aquí]
             
-            A2:
+            R2:
             [Escribe la segunda respuesta aquí]
             
-            [Continuar con pares adicionales de Q/A según sea necesario]
+            [Continuar con pares adicionales de Pregutnas/Respuestas según sea necesario]
             
             REQUISITOS:
+            - Genera al menos {number_of_questions} pares de pregunta-respuesta
             - Genera SOLAMENTE pares de pregunta-respuesta en el formato exacto mostrado arriba
             - Cada pregunta debe centrarse en un solo concepto
             - Cada respuesta debe tener entre 2 y 4 oraciones
@@ -255,6 +313,7 @@ class FlashcardGenerator:
                     "model": self.model,
                     "prompt": prompt_spanish,
                     "stream": False,
+                    "keep_alive": 0,
                 },
             )
             response.raise_for_status()
@@ -291,7 +350,7 @@ class FlashcardGenerator:
 
         for i in range(0, len(flashcards_list)):
             line = flashcards_list[i].strip()
-            if line.startswith("Q"):
+            if line.startswith("P"):
                 question = flashcards_list[i].strip()
                 answer = flashcards_list[i + 1].strip()
                 print(f"Question: {question}")
@@ -312,31 +371,34 @@ class FlashcardGenerator:
         """
         # Parse study guide
         contents = self.get_study_guide(file_path)
+        contents = self.clean_study_guide(contents)
 
         if not contents:
             print("Study guide parsing failed. Please check the file type.")
             return
 
         # Divide study guide into sections
-        sections = self.divide_section(contents, max_words=1200)
-        print("#" * 50)
+        sections = self.divide_section(contents, max_words=600)
+        sections = self.join_small_sectios(sections, min_words=200)
+        print("#" * 150)
         print("Sections divided successfully.")
         for i, section in enumerate(sections):
             print(f"Section {i+1}:")
             print(section)
-        print("#" * 50)
+        print("#" * 150)
 
         # Generate flashcards
         all_flashcards = []
-        for section in sections:
+        for i, section in enumerate(sections):
+            time.sleep(5)
+            print("#" * 100)
+            print("Generating flashcards for section", i + 1)
             flashcards = self.generate_flashcards(section)
             all_flashcards.append(flashcards)
+            print(flashcards)
 
         all_flashcards = "\n".join(all_flashcards)
-        print("#" * 50)
         print("Flashcards generated successfully.")
-        print(all_flashcards)
-        print("#" * 50)
 
         if len(all_flashcards) == 0:
             print("Flashcards generation failed. Please try again.")
