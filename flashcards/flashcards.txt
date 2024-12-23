@@ -1,129 +1,126 @@
  P1: ¿Qué es una red de información masiva?
          R1: Una red de información masiva es un conjunto de recursos que transmiten información a una gran cantidad de personas de forma simultánea.
 
-         P2: ¿Cuál fue la primera red informática en funcionamiento?
-         R2: La primer red informática en funcionamiento fue creada por el departamento de defensa de los Estados Unidos en la década de 1960, llamada DARPANET.
+         P2: ¿Qué se entiende por conexión en red?
+         R2: Conexión en red es el proceso de conectar dos o más dispositivos informáticos para permitir la transmisión e intercambio de información y recursos.
 
-         P3: ¿Qué es una conexión en red?
-         R3: La Conexión en Red es el proceso de conectar dos o más dispositivos informáticos para permitir la transmisión e intercambio de información y recursos.
+         P3: ¿Cuál fue el primer red informática en funcionamiento?
+         R3: La primer red informática en funcionamiento fue creada por el departamento de defensa de los Estados Unidos en la década de 1960, llamada DARPANET.
 
-         P4: ¿Cuál es un ejemplo actual de una red de información masiva?
-         R4: Un ejemplo actual de una red de información masiva es el Internet, la cual, es una red descentralizada de redes de comunicación.
+         P4: ¿Cómo se define una red de información privada?
+         R4: Una red de información privada es una red segura que solo pueden utilizar ciertos dispositivos o usuarios, y que está aislada de la red pública del internet.
 
-         P5: ¿Qué es una red de información privada?
-         R5: Una red de información privada es una red segura que solo pueden utilizar ciertos dispositivos o usuarios, y que está aislada de la red pública del internet.
+         P5: ¿En qué se basa la conexión entre equipos en una red de información privada?
+         R5: Se utilizan para conectar equipos dentro de una organización (Intranet) o de varias organizaciones (Extranet). Para que los dispositivos se conecten al internet, es necesario de una puerta de enlace, a través de su ISP.
 
-         P6: ¿Cómo se conectan los dispositivos en una red de información privada?
-         R6: Se necesita de una puerta de enlace, a través de su ISP para que los dispositivos se conecten al internet.
- P1: ¿Qué es una red conmutada?
-        R1: Una red en la que las conexiones se establecen dinámicamente entre dos puntos de datos, como máquinas, cuando es necesaria la comunicación y luego se desconectan.
+         P6: ¿Cuál es un ejemplo actual de una red de información masiva?
+         R6: El Internet es un ejemplo actual de una red de información masiva, la cual es una red descentralizada de redes de comunicación.
+ P1: Qué es una red conmutada?
+        R1: Es un tipo de red en la que las comunicaciones entre dispositivos se transmiten a través de circuitos virtuales que se establecen y desconectan según sea necesario.
 
-        P2: ¿Qué es un circuito virtual conmutado?
-        R2: Es una conexión lógica entre dos máquinas que se establece dinámicamente para futuras comunicaciones. Se libera después de cada transmisión.
+        P2: ¿Cuál es la diferencia entre circuitos virtuales conmutados y circuitos virtuales permanentes?
+        R2: Los circuitos virtuales conmutados se establecen para cada transmisión de datos y luego se desconectan, mientras que los circuitos virtuales permanentes quedan fijados para futuras comunicaciones.
 
-        P3: ¿Qué es un circuito virtual permanente?
-        R3: Es un circuito virtual como el conmutado, pero los circuitos una vez que se establecen, quedan fijados para futuras comunicaciones.
+        P3: ¿Qué es una PAN?
+        R3: Es una red diseñada para conectar dispositivos dentro de un área muy pequeña, generalmente de unos pocos metros (como una habitación).
 
-        P4: ¿Qué es una red de área personal (PAN)?
-        R4: Una red diseñada para conectar dispositivos dentro de un área muy pequeña, generalmente de unos pocos metros (como una habitación).
+        P4: ¿Cuál es la diferencia entre una LAN y una MAN?
+        R4: Una LAN es una red que conecta dispositivos en un área local limitada, mientras que una MAN es más extensa e incluye todo o gran parte de una ciudad o área metropolitana.
 
-        P5: ¿Qué es una red de área local (LAN)?
-        R5: Una red que conecta dispositivos en un área local limitada, como una casa, oficina, o campus universitario.
-
-        P6: ¿Qué es una red de área metropolitana (MAN)?
-        R6: Es una red más extensa que una LAN, diseñada para cubrir una ciudad o un área metropolitana.
-
-        P7: ¿Qué es una red de área amplia (WAN)?
-        R7: Una red que cubre grandes distancias geográficas, conectando múltiples LANs, MANs, o incluso dispositivos individuales en diferentes partes del mundo.
-
-        P8: ¿Qué es un VLAN (Virtual Local Area Network)?
-        R8: Es una tecnología que nos permite crear redes lógicas independientes dentro de la misma red física, ofreciendo beneficios como seguridad, segmentación, flexibilidad, optimización y mejora eficiencia del personal de TI.
+        P5: ¿Qué es la tecnología VLAN y por qué se utiliza?
+        R5: Es una tecnología que nos permite crear redes lógicas independientes dentro de la misma red física, lo que nos permite organizar nuestra red de diferentes formas, optimizar el uso del ancho de banda, mejorar la seguridad y mejora la eficiencia del personal de TI.
  P1: ¿Qué es el enrutamiento?
           R1: El enrutamiento es el proceso de selección de rutas en cualquier red.
 
-         P2: ¿Cuáles son los elementos de una red de computación?
+          P2: ¿Cuáles son los elementos de una red de computación?
           R2: Los elementos de una red de computación son hosts, nodos de comunicación y rutas de conexión entre nodos.
 
-         P3: ¿Qué es un enrutador?
-          R3: Un enrutador es un dispositivo de red que conecta los dispositivos de computación y las redes a otras redes.
+          P3: ¿Cómo funciona un enrutador?
+          R3: Un enrutador usa una tabla de de enrutamiento, la cual le indica el camino óptimo para llegar de punto A a punto B. Existen 2 tipos de enrutamiento.
 
-         P4: ¿Cuáles son las funciones principales de un enrutador?
-          R4: Los enrutadores cumplen con 3 funciones principales: determinación de la ruta, reenvío de datos y balanceador de carga.
+          P4: ¿Qué es el enrutamiento estático?
+          R4: El enrutamiento estático se basa en un administrador de red, quién configura manualmente las rutas de red. Es útil cuando la arquitectura de red permanezca constante.
 
-         P5: ¿Cómo funciona el enrutamiento en una red?
-          R5: Los datos se mueven en la red en forma de paquetes, los cuales son enviados por el enrutador desde un origen hasta un destino.
+          P5: ¿Qué es el enrutamiento dinámico?
+          R5: El enrutamiento dinámico es un conjunto de reglas que crean, mantienen y actualizan la tabla de enrutamiento dinámico. Se adapta a las condiciones cambiantes de la red.
 
-         P6: ¿Cuáles son los tipos de enrutamiento?
-          R6: Existen 2 tipos de enrutamiento: estático y dinámico.
+          P6: ¿Qué son los protocolos de enrutamiento?
+          R6: Los protocolos de enrutamiento son un conjunto de reglas que especifican cómo los enrutadores identifican paquetes y reenvían paquetes. Se pueden clasificar en 2.
 
-         P7: ¿Qué es el enrutamiento estático?
-          R7: El enrutamiento estático se basa en un administrador de red, quién configura manualmente las rutas de red.
+          P7: ¿Qué es el protocolo RIP?
+          R7: El protocolo RIP se basa en los recuentos de saltos para determinar la ruta más corta.
 
-         P8: ¿Qué es el enrutamiento dinámico?
-          R8: Es un conjunto de reglas que crean, mantienen y actualizan la tabla de enrutamiento dinámico. Se adapta a las condiciones cambiantes de la red.
+          P8: ¿Qué es el protocolo OSPF?
+          R8: Open Shortest Path First, recopila información de todos los demás enrutadores del sistema para identificar rutas más cortas.
 
-         P9: ¿Cuáles son los protocolos de enrutamiento?
-          R9: Los protocolos de enrutamiento son un conjunto de reglas que especifican cómo los enrutadores identifican paquetes y reenvían paquetes.
-
-         P10: ¿Qué es el BGP (Border Gateway Protocol)?
-          R10: El BGP (Border Gateway Protocol) es un protocolo de puerta de enlace exterior que sirve para gestionar de mejor manera la transferencia de información entre dos sistemas autónomos.
+          P9: ¿Qué es BGP (Border Gateway Protocol)?
+          R9: BGP es un protocolo de puerta de enlace exterior que sirve para gestionar de mejor manera la transferencia de información entre dos sistemas autónomos. El único protocolo de este tipo.
  P1: ¿Qué fue ARPA?
-        R1: Agencia de Proyectos de Investigación Avanzada, una iniciativa del departamento de defensa de los Estados Unidos con el objetivo de desarrollar una red de computadoras capaz de comunicar usuarios en distintas computadoras.
+        R1: ARPA (Agencia de Proyectos de Investigación Avanzada), fue una iniciativa del departamento de defensa de los Estados Unidos. Su objetivo era la creación de una red de computadoras capaz de comunicar usuarios en distintas computadoras.
 
-        P2: ¿Qué es packet switching?
-        R2: Es un método de transmisión de datos que funciona diferente a la conmutación de circuitos conocida en la red telefónica y fue clave en la creación de ARPANET.
+        P2: ¿Cuáles fueron las ubicaciones principales de la versión inicial de ARPANET?
+        R2: La Universidad de California, Stanford, la universidad de California en Santa Bárbara y la universidad de Utah.
 
-        P3: ¿Qué es el IMP (Interface Message Processor)?
-        R3: Son máquinas pequeñas encargadas de la interoperabilidad de la red, equivalente a los routers hoy en día.
+        P3: ¿Quién fue el creador original del concepto de ARPANET?
+        R3: J. Licklider.
 
-        P4: ¿Qué son los nodos en ARPANET?
-        R4: Son todos aquellos puntos de conexión que manejan información en una conectividad en red.
+        P4: ¿Qué es packet switching en ARPANET?
+        R4: La conmutación de paquetes funciona de un modo diferente a la conmutación de circuitos que se conoce a partid de la red telefónica. ARPANET sentó las bases de la neutralidad de red.
 
-        P5: ¿Qué es el protocolo 1822 en ARPANET?
-        R5: Protocolo que permitía la comunicación entre IMPs, exigía dos áreas por paquete, la información y los headers.
+        P5: ¿Qué es el IMP en ARPANET?
+        R5: Eran máquinas pequeñas encargadas de la interoperabilidad de la red, son similares a los routers que utilizamos hoy en día.
 
-        P6: ¿Qué era NCP (Network Control Program)?
-        R6: Era un protocolo utilizado en la capa intermedia, la de transporte para establecer comunicaciones entre dos hosts.
- P1: ¿Qué es un gateway?
-         R1: Es un nodo de red que conecta dos redes con diferentes protocolos de transmisión, sirve como entrada y salida de una red. Simplifica la conectividad a Internet en un solo dispositivo.
+        P6: ¿Qué es un nodo en ARPANET?
+        R6: Son todos aquellos puntos de conexión que manejan información en una conectividad en red.
+ P1: ¿Qué es un gateway en una red?
+         R1: Es un nodo de red que conecta dos redes con diferentes protocolos de transmisión, sirven como entrada y salida de una red. Simplifica la conectividad a Internet en un solo dispositivo.
 
-         P2: ¿Cómo se diferencia un gateway de un router?
+         P2: ¿Cómo difiere un gateway de un router?
          R2: Las puertas de enlace se utilizan para unir dos redes diferentes (redes con protocolos primarios diferentes), mientras que el router solo une dos redes que tengan los mismos protocolos.
 
          P3: ¿Qué es un proxy?
-         R3: Es un servidor que actúa como intermediario entre un usuario y el internet. Cuenta con una caché que le sirve a todos los usuarios que usen dicho proxy. También brindan seguridad y un mejor control.
+         R3: Es un servidor que actúa como intermediario entre un usuario y el internet. Cuenta con una caché que le sirve a todos los usuarios que usen dicho proxy.
 
-         P4: ¿Cómo se diferencia un proxy de un VPN?
+         P4: ¿Cómo difiere un proxy de un VPN?
          R4: Un Proxy funciona como agente entre un usuario e Internet, pero no cifran los datos, mientras que un servidor VPN encripta y enruta todo el tráfico de internet a través de un servidor remoto.
 
          P5: ¿Qué es un firewall?
          R5: El firewall es un sistema de seguridad de red que impide el acceso no autorizado a una red, este inspecciona el tráfico entrante y saliente mediante un conjunto de reglas de seguridad para identificar y bloquear amenazas.
 
          P6: ¿Cómo se clasifica un firewall?
-         R6: Un firewall puede ser... hardware físico, software, SaaS, o en la nube. También puede entrar en alguna de las siguientes clasificaciones según lo que protegen y por método de filtrado.
+         R6: Un firewall puede entrar en alguna de las siguientes clasificaciones: 1. Según lo que protegen, 2. Por método de filtrado. Las subclasificaciones son: basados en red y basados en host, filtrado de paquetes, inspección de estado, puerta de enlace, proxy, de próxima generación, virtuales, nativos de la nube.
 
-         P7: ¿Cómo se usa un firewall?
-         R7: Se utiliza como defensa contra amenazas, funciones de registro y auditoría, filtrado de tráfico, control y bloqueo de acceso, y acceso remoto seguro.
+         P7: ¿Cuál es el uso de un firewall?
+         R7: El uso de un firewall es para defender contra amenazas, funciones de registro y auditoría, filtrado de tráfico, control y bloqueo de acceso, y acceso remoto seguro.
  P1: ¿Qué es un cableado estructurado?
-        R1: Es un sistema de cables que permite transportar información de manera segura y eficiente dentro de una LAN.
+         R1: Es un sistema de cables que permite transportar información segura y eficiente dentro de una LAN, existen tipos como cableado vertical (o troncal) y horizontal.
 
-        P2: ¿Cómo se diferencian el cableado vertical y horizontal?
-        R2: El cableado vertical, también llamado troncal, conecta los diferentes cuartos de servicio. Mientras que el cableado horizontal conecta las estaciones de trabajo con la red.
+         P2: ¿Qué consideraciones se tienen al instalar un cableado estructurado?
+         R2: Diseñar un esquema de cableado que permita futuras expansiones y seguir los estándares de cableado para asegurar la compatibilidad y el rendimiento óptimo.
 
-        P3: ¿Qué se tiene en cuenta al instalar un cableado estructurado?
-        R3: Al instalar un cableado estructurado, se diseña un esquema de cableado que permita futuras expansiones y se siguen los estándares de cableado para asegurar la compatibilidad y el rendimiento óptimo.
+         P3: ¿Qué es una tarjeta de red?
+         R3: Aparejo que se encarga de preparar, transferir y controlar la información o datos que envían a los otros equipos conectados a una misma red.
 
-        P4: ¿Qué es una tarjeta de red?
-        R4: Son aparatos que se encargan de preparar, transferir y controlar la información o datos que envían a los otros equipos que están conectados a una misma red.
+         P4: ¿Qué es un repetidor?
+         R4: Es un dispositivo que refuerza las señales, amplificándolas o regenerándolas.
 
-        P5: ¿Qué hace un repetidor en una red?
-        R5: Un repetidor es un dispositivo que refuerza las señales, amplificándolas o regenerándolas.
+         P5: ¿Qué son los transductores?
+         R5: Dispositivos que convierten las señales de un tipo a otro, permitiendo la comunicación y transmisión de datos de manera eficiente.
 
-        P6: ¿Qué es un transductor?
-        R6: Los transductores son dispositivos que convierten las señales de un tipo a otro, permitiendo la comunicación y transmisión de datos de manera eficiente.
+         P6: ¿Qué es un firewall?
+         R6: Es un dispositivo de seguridad de red que supervisa y controla el tráfico de red entrante y saliente para evitar accesos no autorizados.
 
-        P7: ¿Qué hace un firewall en una red?
-        R7: El firewall es un dispositivo de seguridad de red que supervisa y controla el tráfico de red entrante y saliente para evitar accesos no autorizados.
+         P7: ¿Qué es un modem?
+         R7: Es un dispositivo de entrada y salida, el cual conecta distintos equipos computacionales entre sí a través de una conexión entrante en una de Ethernet, hay tipos internos e externos.
 
-        P8: ¿Qué es un modem?
-        R8: Es un dispositivo de entrada y salida, el cual conecta distintos equipos computacionales entre sí a través de una conexión entrante en una de Ethernet.
+         P8: ¿Qué es un codec?
+         R8: Es un dispositivo capaz de convertir una señal analógica a una digital para transmitirla sobre una red de datos, su función consiste en transformar las señales digitales de audio y video en un formato que puede reproducirse.
+
+         P9: ¿Qué son los puertos?
+         R9: Son las interfaces que utilizan las aplicaciones para conectarse con otros elementos, hay tipos de hardware y software.
+
+         P10: ¿Qué es un bridge?
+         R10: Conecta y filtra el tráfico entre dos o más segmentos de red, opera en la capa dos del modelo OSI.
+
+         P11: ¿Qué es un switch?
+         R11: Es un dispositivo que permite conectar varias computadoras entre si, usa las direcciones MAC y a veces también las IP.
