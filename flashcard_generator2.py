@@ -95,23 +95,6 @@ class FlashcardGenerator:
         else:
             return ""
 
-    def clean_study_guide(self, contents: str) -> str:
-        """
-        Clean the study guide by removing "==", "**", "_", "*", and other markdown elements
-        """
-        if not contents:
-            return ""
-
-        # Remove markdown elements
-        contents = contents.replace("==", "")
-        contents = contents.replace("__", "")
-        contents = contents.replace("**", "")
-        contents = contents.replace("_", "")
-        contents = contents.replace("*", "")
-        contents = contents.replace("`", "")
-
-        return contents
-
     def divide_section(self, contents: str, max_words: int = 600) -> list:
         """
         Divides a markdown document into sections based on headers and word count limits.
@@ -274,7 +257,7 @@ class FlashcardGenerator:
         prompt_spanish = f"""
             Eres un generador de tarjetas de estudio. Tu ÚNICA tarea es convertir el siguiente material de estudio en pares de pregunta-respuesta. NO proporciones comentarios, consejos ni explicaciones sobre el proceso de creación de tarjetas.
 
-            Material de Estudio en formato Markdown:
+            Material de Estudio:
             {content}
             
             FORMATO DE SALIDA ESTRICTO:
@@ -313,7 +296,6 @@ class FlashcardGenerator:
                     "model": self.model,
                     "prompt": prompt_spanish,
                     "stream": False,
-                    "keep_alive": 0,
                 },
             )
             response.raise_for_status()
@@ -371,7 +353,6 @@ class FlashcardGenerator:
         """
         # Parse study guide
         contents = self.get_study_guide(file_path)
-        contents = self.clean_study_guide(contents)
 
         if not contents:
             print("Study guide parsing failed. Please check the file type.")
@@ -389,16 +370,16 @@ class FlashcardGenerator:
 
         # Generate flashcards
         all_flashcards = []
-        for i, section in enumerate(sections):
+        for section in sections:
             time.sleep(5)
-            print("#" * 100)
-            print("Generating flashcards for section", i + 1)
             flashcards = self.generate_flashcards(section)
             all_flashcards.append(flashcards)
-            print(flashcards)
 
         all_flashcards = "\n".join(all_flashcards)
+        print("#" * 50)
         print("Flashcards generated successfully.")
+        print(all_flashcards)
+        print("#" * 50)
 
         if len(all_flashcards) == 0:
             print("Flashcards generation failed. Please try again.")
