@@ -95,7 +95,7 @@ class FlashcardGenerator:
         else:
             return ""
 
-    def divide_section(self, contents: str, max_words: int = 1200) -> list:
+    def divide_section(self, contents: str, max_words: int = 600) -> list:
         """
         Divides a markdown document into sections based on headers and word count limits.
 
@@ -174,6 +174,39 @@ class FlashcardGenerator:
 
         return final_sections
 
+    def join_small_sectios(self, sections: list, min_words: int = 200) -> list:
+        """
+        Joins small sections together to meet a minimum word count. If a section is too small, it will be joined with the next section.
+
+        Args:
+            sections (list): List of sections to join
+            max_words (int): Minimum number of words per section after joining
+
+        Returns:
+            list: List of sections as strings
+        """
+        if not sections:
+            return []
+
+        def count_words(text: str) -> int:
+            """Counts words in a text section"""
+            return len([word for word in text.split() if word.strip()])
+
+        final_sections = []
+        current_section = ""
+
+        for section in sections:
+            if count_words(current_section) < min_words:
+                current_section += "\n\n" + section
+            else:
+                final_sections.append(current_section)
+                current_section = section
+
+        if current_section:
+            final_sections.append(current_section)
+
+        return final_sections
+
     def generate_flashcards(self, content: str) -> str:
         """
         Generate a flashcard using Ollama API
@@ -221,19 +254,19 @@ class FlashcardGenerator:
             {content}
             
             FORMATO DE SALIDA ESTRICTO:
-            Q1:
+            P1:
             [Escribe la primera pregunta aquí]
             
-            A1:
+            R1:
             [Escribe la primera respuesta aquí]
             
-            Q2:
+            P2:
             [Escribe la segunda pregunta aquí]
             
-            A2:
+            R2:
             [Escribe la segunda respuesta aquí]
             
-            [Continuar con pares adicionales de Q/A según sea necesario]
+            [Continuar con pares adicionales de Pregutnas/Respuestas según sea necesario]
             
             REQUISITOS:
             - Genera SOLAMENTE pares de pregunta-respuesta en el formato exacto mostrado arriba
@@ -318,13 +351,14 @@ class FlashcardGenerator:
             return
 
         # Divide study guide into sections
-        sections = self.divide_section(contents, max_words=1200)
-        print("#" * 50)
+        sections = self.divide_section(contents, max_words=600)
+        sections = self.join_small_sectios(sections, min_words=200)
+        print("#" * 150)
         print("Sections divided successfully.")
         for i, section in enumerate(sections):
             print(f"Section {i+1}:")
             print(section)
-        print("#" * 50)
+        print("#" * 150)
 
         # Generate flashcards
         all_flashcards = []
