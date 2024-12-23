@@ -1,91 +1,129 @@
-1. ¿Qué es el enrutamiento?
-   R1. El enrutamiento es el proceso de selección de rutas en cualquier red, con el objetivo de lograr la mejor comunicación entre dos nodos de la misma.
+ P1: ¿Qué es una red de información masiva?
+         R1: Una red de información masiva es un conjunto de recursos que transmiten información a una gran cantidad de personas de forma simultánea.
 
-2. ¿Cuál es la meta del enrutamiento?
-   R2. La meta del enroutamiento es seleccionar la mejor ruta para que la información se mueva eficientemente en la red.
+         P2: ¿Cuál fue la primera red informática en funcionamiento?
+         R2: La primer red informática en funcionamiento fue creada por el departamento de defensa de los Estados Unidos en la década de 1960, llamada DARPANET.
 
-3. ¿Qué elementos constituyen una red de computación?
-   R3. Los elementos de una red de computación son hosts, nodos de comunicación y las conexiones entre nodos.
+         P3: ¿Qué es una conexión en red?
+         R3: La Conexión en Red es el proceso de conectar dos o más dispositivos informáticos para permitir la transmisión e intercambio de información y recursos.
 
-4. ¿Cómo funciona un enrutador?
-   R4. Un enrutador es un dispositivo que conecta los dispositivos de computación a otras redes y cumple con 3 funciones principales: determinar la ruta, reenvío de datos y balancear el carga.
+         P4: ¿Cuál es un ejemplo actual de una red de información masiva?
+         R4: Un ejemplo actual de una red de información masiva es el Internet, la cual, es una red descentralizada de redes de comunicación.
 
-5. ¿Qué diferencia hay entre enrutamiento estático y dinámico?
-   R5. El enrutamiento estático se basa en un administrador de red que configura manualmente las rutas de la red, mientras que el enrutamiento dinámico es una regla que crean, mantienen y actualizan la tabla de enrutamiento en función de las condiciones cambiantes de la red.
+         P5: ¿Qué es una red de información privada?
+         R5: Una red de información privada es una red segura que solo pueden utilizar ciertos dispositivos o usuarios, y que está aislada de la red pública del internet.
 
-6. ¿Cuál es el único protocolo de puerta de enlace exterior?
-   R6. El único protocolo de puerta de enlace exterior es el BGP (Border Gateway Protocol).
+         P6: ¿Cómo se conectan los dispositivos en una red de información privada?
+         R6: Se necesita de una puerta de enlace, a través de su ISP para que los dispositivos se conecten al internet.
+ P1: ¿Qué es una red conmutada?
+        R1: Una red en la que las conexiones se establecen dinámicamente entre dos puntos de datos, como máquinas, cuando es necesaria la comunicación y luego se desconectan.
 
-7. ¿Qué es el ASN y para qué sirve?
-   R7. Un Autonomous System Number (ASN) es un número que obtiene cada sistema autónomo cuando se registra en la Autoridad de números asignados de Internet, y sirve para gestionar de mejor manera la transferencia de información entre dos sistemas autónomos.
+        P2: ¿Qué es un circuito virtual conmutado?
+        R2: Es una conexión lógica entre dos máquinas que se establece dinámicamente para futuras comunicaciones. Se libera después de cada transmisión.
 
-8. ¿Qué son los algoritmos de enrutamiento?
-   R8. Los algoritmos de enrutamiento son programas de software que implementan diferentes protocolos de enrutamiento y funcionan mediante la asignación de un número de costo a cada enlace.
+        P3: ¿Qué es un circuito virtual permanente?
+        R3: Es un circuito virtual como el conmutado, pero los circuitos una vez que se establecen, quedan fijados para futuras comunicaciones.
 
-9. ¿Cómo se determina la mejor ruta?
-   R9. La mejor ruta se determina calculando el camino más corto, que puede hacerse mediante el conteo de saltos o mediante la recopilación de información de todos los nodos de la red y analizándola para elegir la ruta más eficiente.
+        P4: ¿Qué es una red de área personal (PAN)?
+        R4: Una red diseñada para conectar dispositivos dentro de un área muy pequeña, generalmente de unos pocos metros (como una habitación).
 
-10. ¿Qué es un enrutador en la nube?
-   R10. Un enrutador en la nube es un software que virtualiza las funciones de un enrutador, facilitando sus funciones y administrando dinámicamente las conexiones entre dos redes de nube virtual.
-1. P1: ¿Qué es un firewall?
-   R1: Un firewall es un dispositivo de seguridad de red que supervisa y controla el tráfico de red entrante y saliente para evitar accesos no autorizados.
+        P5: ¿Qué es una red de área local (LAN)?
+        R5: Una red que conecta dispositivos en un área local limitada, como una casa, oficina, o campus universitario.
 
-2. P1: ¿Cuál es la clase en la que se encuadra el firewall basado en redes?
-   R1: El firewall basado en redes pertenece a la primera clasificación, según lo que protegen, ya que protege redes enteras.
+        P6: ¿Qué es una red de área metropolitana (MAN)?
+        R6: Es una red más extensa que una LAN, diseñada para cubrir una ciudad o un área metropolitana.
 
-3. P1: ¿Cómo funciona un firewall de estado?
-   R1: Un firewall de estado examina el tráfico y relaciona paquetes entre sí para verificar la integridad del tráfico.
+        P7: ¿Qué es una red de área amplia (WAN)?
+        R7: Una red que cubre grandes distancias geográficas, conectando múltiples LANs, MANs, o incluso dispositivos individuales en diferentes partes del mundo.
 
-4. P1: ¿Qué es un puente en red?
-   R1: Un puente en red conecta y filtra el tráfico entre dos o más segmentos de red, y opera en la capa dos del modelo OSI.
+        P8: ¿Qué es un VLAN (Virtual Local Area Network)?
+        R8: Es una tecnología que nos permite crear redes lógicas independientes dentro de la misma red física, ofreciendo beneficios como seguridad, segmentación, flexibilidad, optimización y mejora eficiencia del personal de TI.
+ P1: ¿Qué es el enrutamiento?
+          R1: El enrutamiento es el proceso de selección de rutas en cualquier red.
 
-5. P1: ¿Cuál es la diferencia entre un firewall basado en host y un firewall basado en redes?
-   R1: El firewall basado en host protege dispositivos individuales, mientras que el firewall basado en redes protege redes enteras.
+         P2: ¿Cuáles son los elementos de una red de computación?
+          R2: Los elementos de una red de computación son hosts, nodos de comunicación y rutas de conexión entre nodos.
 
-6. P1: ¿Qué es un switch en red?
-   R1: Un switch en red permite conectar varias computadoras entre sí, y opera en la capa dos del modelo OSI, usando direcciones MAC para identificar los equipos conectados.
+         P3: ¿Qué es un enrutador?
+          R3: Un enrutador es un dispositivo de red que conecta los dispositivos de computación y las redes a otras redes.
 
-7. P1: ¿Qué es un modem?
-   R1: Un modem es un dispositivo de entrada y salida que conecta distintos equipos computacionales entre sí a través de una conexión entrante en una de Ethernet.
+         P4: ¿Cuáles son las funciones principales de un enrutador?
+          R4: Los enrutadores cumplen con 3 funciones principales: determinación de la ruta, reenvío de datos y balanceador de carga.
 
-8. P1: ¿Cuáles son los tipos de puertos?
-   R1: Los puertos se dividen en dos tipos, puertos de hardware (puertos físicos) y puertos de software (puertos lógicos).
+         P5: ¿Cómo funciona el enrutamiento en una red?
+          R5: Los datos se mueven en la red en forma de paquetes, los cuales son enviados por el enrutador desde un origen hasta un destino.
 
-9. P1: ¿Qué es un puente?
-   R1: Un puente es un dispositivo que conecta y filtra el tráfico entre dos o más segmentos de red, y opera en la capa dos del modelo OSI.
+         P6: ¿Cuáles son los tipos de enrutamiento?
+          R6: Existen 2 tipos de enrutamiento: estático y dinámico.
 
-10. P1: ¿Cuál es el formato de salida estricto?
-   R1: El formato de salida estricto requiere que cada pregunta-respuesta se presente en un solo par, con la pregunta seguida por dos puntos y luego la respuesta.
+         P7: ¿Qué es el enrutamiento estático?
+          R7: El enrutamiento estático se basa en un administrador de red, quién configura manualmente las rutas de red.
 
-11. P1: ¿Cómo funciona un switch?
-   R1: Un switch permite conectar varias computadoras entre sí, opera en la capa dos del modelo OSI, usando direcciones MAC para identificar los equipos conectados.
+         P8: ¿Qué es el enrutamiento dinámico?
+          R8: Es un conjunto de reglas que crean, mantienen y actualizan la tabla de enrutamiento dinámico. Se adapta a las condiciones cambiantes de la red.
 
-12. P1: ¿Cómo funciona un puente?
-   R1: Un puente conecta y filtra el tráfico entre dos o más segmentos de red, y opera en la capa dos del modelo OSI.
+         P9: ¿Cuáles son los protocolos de enrutamiento?
+          R9: Los protocolos de enrutamiento son un conjunto de reglas que especifican cómo los enrutadores identifican paquetes y reenvían paquetes.
 
-13. P1: ¿Qué son los puertos de software?
-   R1: Los puertos de software son los puertos lógicos, que se utilizan para conectarse con otros elementos mediante aplicaciones en lugar de dispositivos físicos.
+         P10: ¿Qué es el BGP (Border Gateway Protocol)?
+          R10: El BGP (Border Gateway Protocol) es un protocolo de puerta de enlace exterior que sirve para gestionar de mejor manera la transferencia de información entre dos sistemas autónomos.
+ P1: ¿Qué fue ARPA?
+        R1: Agencia de Proyectos de Investigación Avanzada, una iniciativa del departamento de defensa de los Estados Unidos con el objetivo de desarrollar una red de computadoras capaz de comunicar usuarios en distintas computadoras.
 
-14. P1: ¿Qué es un bridge?
-   R1: Un bridge es una red de comunicación que permite la interconexión entre dos o más segmentos, operando en la capa dos del modelo OSI.
+        P2: ¿Qué es packet switching?
+        R2: Es un método de transmisión de datos que funciona diferente a la conmutación de circuitos conocida en la red telefónica y fue clave en la creación de ARPANET.
 
-15. P1: ¿Cómo funciona un router?
-   R1: Un router enruta direcciones IP (capa 3) y se utiliza para conectar varias redes entre sí.
+        P3: ¿Qué es el IMP (Interface Message Processor)?
+        R3: Son máquinas pequeñas encargadas de la interoperabilidad de la red, equivalente a los routers hoy en día.
 
-16. P1: ¿Qué es el formato de salida estricto en tarjetas de Flashcard?
-   R1: El formato de salida estricto requiere que cada pregunta-respuesta se presente en un solo par, con la pregunta seguida por dos puntos y luego la respuesta.
+        P4: ¿Qué son los nodos en ARPANET?
+        R4: Son todos aquellos puntos de conexión que manejan información en una conectividad en red.
 
-17. P1: ¿Qué es un switch?
-   R1: Un switch es un dispositivo de capa 2 que permite conectar varias computadoras entre sí, usando direcciones MAC para identificar los equipos conectados.
+        P5: ¿Qué es el protocolo 1822 en ARPANET?
+        R5: Protocolo que permitía la comunicación entre IMPs, exigía dos áreas por paquete, la información y los headers.
 
-18. P1: ¿Cómo funciona un puente en red?
-   R1: Un puente en red conecta y filtra el tráfico entre dos o más segmentos de red, operando en la capa dos del modelo OSI.
+        P6: ¿Qué era NCP (Network Control Program)?
+        R6: Era un protocolo utilizado en la capa intermedia, la de transporte para establecer comunicaciones entre dos hosts.
+ P1: ¿Qué es un gateway?
+         R1: Es un nodo de red que conecta dos redes con diferentes protocolos de transmisión, sirve como entrada y salida de una red. Simplifica la conectividad a Internet en un solo dispositivo.
 
-19. P1: ¿Cuál es la diferencia entre un router y un switch?
-   R1: La diferencia principal entre un router y un switch radica en que el router se utiliza para enrutar direcciones IP (capa 3), mientras que el switch se utiliza para conectar computadoras entre sí usando direcciones MAC (capa 2).
+         P2: ¿Cómo se diferencia un gateway de un router?
+         R2: Las puertas de enlace se utilizan para unir dos redes diferentes (redes con protocolos primarios diferentes), mientras que el router solo une dos redes que tengan los mismos protocolos.
 
-20. P1: ¿Qué es el formato de salida estricto?
-   R1: El formato de salida estricto requiere que cada pregunta-respuesta se presente en un solo par, con la pregunta seguida por dos puntos y luego la respuesta.
+         P3: ¿Qué es un proxy?
+         R3: Es un servidor que actúa como intermediario entre un usuario y el internet. Cuenta con una caché que le sirve a todos los usuarios que usen dicho proxy. También brindan seguridad y un mejor control.
 
-21. P1: ¿Cuál es el propósito del modem?
-   R1: El propósito principal del modem es conectar dispositivos digitales entre sí a través de una línea analógica de comunicaciones, como una línea de telefonía convencional o ADSL.
+         P4: ¿Cómo se diferencia un proxy de un VPN?
+         R4: Un Proxy funciona como agente entre un usuario e Internet, pero no cifran los datos, mientras que un servidor VPN encripta y enruta todo el tráfico de internet a través de un servidor remoto.
+
+         P5: ¿Qué es un firewall?
+         R5: El firewall es un sistema de seguridad de red que impide el acceso no autorizado a una red, este inspecciona el tráfico entrante y saliente mediante un conjunto de reglas de seguridad para identificar y bloquear amenazas.
+
+         P6: ¿Cómo se clasifica un firewall?
+         R6: Un firewall puede ser... hardware físico, software, SaaS, o en la nube. También puede entrar en alguna de las siguientes clasificaciones según lo que protegen y por método de filtrado.
+
+         P7: ¿Cómo se usa un firewall?
+         R7: Se utiliza como defensa contra amenazas, funciones de registro y auditoría, filtrado de tráfico, control y bloqueo de acceso, y acceso remoto seguro.
+ P1: ¿Qué es un cableado estructurado?
+        R1: Es un sistema de cables que permite transportar información de manera segura y eficiente dentro de una LAN.
+
+        P2: ¿Cómo se diferencian el cableado vertical y horizontal?
+        R2: El cableado vertical, también llamado troncal, conecta los diferentes cuartos de servicio. Mientras que el cableado horizontal conecta las estaciones de trabajo con la red.
+
+        P3: ¿Qué se tiene en cuenta al instalar un cableado estructurado?
+        R3: Al instalar un cableado estructurado, se diseña un esquema de cableado que permita futuras expansiones y se siguen los estándares de cableado para asegurar la compatibilidad y el rendimiento óptimo.
+
+        P4: ¿Qué es una tarjeta de red?
+        R4: Son aparatos que se encargan de preparar, transferir y controlar la información o datos que envían a los otros equipos que están conectados a una misma red.
+
+        P5: ¿Qué hace un repetidor en una red?
+        R5: Un repetidor es un dispositivo que refuerza las señales, amplificándolas o regenerándolas.
+
+        P6: ¿Qué es un transductor?
+        R6: Los transductores son dispositivos que convierten las señales de un tipo a otro, permitiendo la comunicación y transmisión de datos de manera eficiente.
+
+        P7: ¿Qué hace un firewall en una red?
+        R7: El firewall es un dispositivo de seguridad de red que supervisa y controla el tráfico de red entrante y saliente para evitar accesos no autorizados.
+
+        P8: ¿Qué es un modem?
+        R8: Es un dispositivo de entrada y salida, el cual conecta distintos equipos computacionales entre sí a través de una conexión entrante en una de Ethernet.
