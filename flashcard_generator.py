@@ -13,7 +13,8 @@ class FlashcardGenerator:
         :param ollama_url: URL of the Ollama API for generating flashcards
         """
         self.ollama_url = ollama_url
-        self.model = "mistral"  # Default model, can be changed
+        # self.model = "mistral"  # Default model, can be changed
+        self.model = "deepseek-r1"
 
     def test_ollama_connection(self) -> bool:
         """
